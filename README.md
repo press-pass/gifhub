@@ -14,7 +14,7 @@ change assumptions — and hunts for bugs. For every bug it finds it:
    non-technical reviewer can watch the bug, then watch it disappear — without
    reading a line of code.
 
-The target app ships here as a git submodule: [`home-buyer/`](home-buyer).
+Built for the **home-buyer** app — point the agent at a running copy of it.
 
 ## The debug step
 
@@ -39,15 +39,11 @@ agents never step on each other. One bug → one worktree → one PR.
 ## Quick start
 
 ```bash
-# 1. clone with the app submodule
-git clone --recurse-submodules <this-repo-url>
-cd press-bot
-
-# 2. bring up a copy of the app (per worktree/workspace)
-cd home-buyer && ./provision-workspace.sh   # Conductor setup → unique port/DB/auth
+# 1. bring up a copy of the home-buyer app (per worktree/workspace)
+./provision-workspace.sh   # Conductor setup → unique port/DB/auth
 npm run dev
 
-# 3. hand the agent the debug step
+# 2. hand the agent the debug step
 #    paste PROMPT.md (or run /bug-hunt in Claude Code)
 ```
 
