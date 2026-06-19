@@ -39,6 +39,14 @@ Tell the agent three things (or bake them into the prompt):
 [`PROMPT.md`](PROMPT.md) is the exact prompt to hand the agent. It's also wired up
 as a Claude Code slash command: [`/bug-hunt`](.claude/commands/bug-hunt.md).
 
+## Report-only mode
+
+Want bug reports without fixes — e.g. run against **production** — instead of
+fix-and-PR? The [`prod-bug-report`](.claude/skills/prod-bug-report/SKILL.md) skill
+walks the live app's flows like a user and writes each bug up with reproduction
+steps (`steps:` / `expected behavior:` / `actual behavior:`). No code changes; it
+just produces reports.
+
 ## How it works
 
 The mechanics that make the GIFs reproducible and the e2e reliable are in
