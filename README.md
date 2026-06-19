@@ -13,6 +13,26 @@ person**, hunts for bugs, and for every bug it finds it:
    non-technical reviewer can watch the bug, then watch it disappear — without
    reading a line of code.
 
+## Install as a Claude Code plugin
+
+gifhub ships as a Claude Code plugin, so you can drop these skills into **any**
+repo:
+
+```
+/plugin marketplace add press-pass/gifhub
+/plugin install gifhub
+```
+
+That installs two skills — [`bug-hunt`](skills/bug-hunt/SKILL.md) (find + fix +
+GIF PRs) and [`prod-bug-report`](skills/prod-bug-report/SKILL.md) (report-only) —
+plus the [`/bug-hunt`](commands/bug-hunt.md) slash command. The skills
+auto-trigger when you ask an agent to hunt for bugs. Run `/plugin update gifhub`
+to pull changes. To try it without installing, from a clone:
+
+```
+claude --plugin-dir /path/to/gifhub
+```
+
 ## Requirement: per-worktree environments
 
 gifhub parallelizes by running subagents in **separate git worktrees**, each
@@ -36,13 +56,15 @@ Tell the agent three things (or bake them into the prompt):
 
 ## The debug step
 
-[`PROMPT.md`](PROMPT.md) is the exact prompt to hand the agent. It's also wired up
-as a Claude Code slash command: [`/bug-hunt`](.claude/commands/bug-hunt.md).
+The [`bug-hunt`](skills/bug-hunt/SKILL.md) skill is the full brief. With the
+plugin installed it runs as the [`/bug-hunt`](commands/bug-hunt.md) slash command
+or auto-triggers when you ask an agent to hunt for bugs. [`PROMPT.md`](PROMPT.md)
+carries the same brief as a copy-paste prompt for agents without the plugin.
 
 ## Report-only mode
 
 Want bug reports without fixes — e.g. run against **production** — instead of
-fix-and-PR? The [`prod-bug-report`](.claude/skills/prod-bug-report/SKILL.md) skill
+fix-and-PR? The [`prod-bug-report`](skills/prod-bug-report/SKILL.md) skill
 walks the live app's flows like a user and writes each bug up with reproduction
 steps (`steps:` / `expected behavior:` / `actual behavior:`). No code changes; it
 just produces reports.
@@ -50,7 +72,8 @@ just produces reports.
 ## How it works
 
 The mechanics that make the GIFs reproducible and the e2e reliable are in
-[`docs/METHODOLOGY.md`](docs/METHODOLOGY.md):
+[`METHODOLOGY.md`](skills/bug-hunt/METHODOLOGY.md), bundled with the `bug-hunt`
+skill:
 
 - one e2e spec produces **both** GIFs — before (run against the buggy build,
   fails) and after (run against the fix, passes),

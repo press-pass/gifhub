@@ -1,0 +1,19 @@
+{
+  "name": "gifhub",
+  "owner": {
+    "name": "press-pass",
+    "url": "https://github.com/press-pass"
+  },
+  "plugins": [
+    {
+      "name": "gifhub",
+      "description": "Autonomous QA bug-hunt harness: find bugs, fix them, and ship PRs with inline before/after GIFs — plus a report-only prod mode.",
+      "version": "0.1.0",
+      "source": "./",
+      "author": {
+        "name": "Seamus Martin",
+        "url": "https://github.com/press-pass"
+      }
+    }
+  ]
+}
