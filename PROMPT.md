@@ -37,4 +37,4 @@ repo's per-worktree environment setup.
   for stable e2e and clean GIFs.
 - Keep fixes **minimal and atomic**. One bug, one fix, one PR.
 - The exact recording + inline-embed mechanics are in
-  [`docs/METHODOLOGY.md`](docs/METHODOLOGY.md). Read it before recording.
+  [`METHODOLOGY.md`](skills/bug-hunt/METHODOLOGY.md). Read it before recording.
