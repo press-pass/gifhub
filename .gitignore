@@ -1,0 +1,5 @@
+# Recording scratch (GIFs that belong to a bug live in that bug's PR, committed
+# under the app repo — not here).
+*.webm
+/tmp/
+.DS_Store
