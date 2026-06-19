@@ -1,0 +1,4 @@
+[submodule "home-buyer"]
+	path = home-buyer
+	url = https://github.com/tybo9188/home-buyer.git
+	branch = main
