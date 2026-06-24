@@ -8,7 +8,7 @@
     {
       "name": "gifhub",
       "description": "Autonomous QA bug-hunt harness: find bugs, fix them, and ship PRs with inline before/after GIFs — plus a report-only prod mode.",
-      "version": "0.1.0",
+      "version": "0.1.1",
       "source": "./",
       "author": {
         "name": "Seamus Martin",
